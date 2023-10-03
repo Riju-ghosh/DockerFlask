@@ -1,10 +1,9 @@
-FROM node:18
+FROM python:3
 
 WORKDIR /app
-COPY . .
-COPY .env.example .env
+COPY . /app
 
-RUN npm install --force
-RUN unset NODE_OPTIONS
+RUN pip install -r requirements.txt
+
 EXPOSE 3000
-ENTRYPOINT [ "npm", "start" ]
+CMD python ./main.py
