@@ -1,9 +1,8 @@
 FROM python:3
+EXPOSE 3000
 
 WORKDIR /app
-COPY . /app
+COPY . .
 
 RUN pip install -r requirements.txt
-
-EXPOSE 3000
-CMD python ./main.py
+CMD python3 ./main.py
